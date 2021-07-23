@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import './App.css'
+import Todo from './components/Todo/Todo.js'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+if(!localStorage.getItem('theme')){
+    localStorage.setItem('theme', true)
 }
 
-export default App;
+const App = () =>{
+    //Local Storage só armazena String, portanto é preciso fazer um parse para boolean
+    const [theme, setTheme] = React.useState(JSON.parse(localStorage.getItem('theme')))
+    return (
+            <div className={`app__wrapper ${theme ? 'lightTheme' : 'darkTheme'}`}>
+                <Todo theme={theme} setTheme={setTheme}  />
+            </div>
+    )
+}
+
+export default App
