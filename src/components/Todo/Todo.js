@@ -105,7 +105,7 @@ const Todo = props =>{
                             )/*Fim do return JSX*/
                         })/*Fim do all.map*/ )
                         ||
-                        todoList && currentFilter==='completed' && todoList.filter(item => item.checked ===true).map(listItem =>{
+                        (todoList && currentFilter==='completed' && todoList.filter(item => item.checked ===true).map(listItem =>{
                             let listItemReference = listItem.content.replaceAll(' ','_')
                             return (
                             <li key={`${listItem.content}`}>
@@ -127,7 +127,7 @@ const Todo = props =>{
                                </div>
                             </li>
                             )/*Fim do return JSX*/
-                        })/*Fim do all.map*/ 
+                        })/*Fim do all.map*/ )
                     }
                  <li className="todoList__controls">
                      <div><p>{todoList.length - todoList.filter(item => item.checked).length} items left</p></div>
