@@ -3,11 +3,13 @@ ul{
 }
 .darkTheme{
   background-image: url(assets/bg-desktop-dark.jpg);
+  background-size: 100% auto;
   background-color: hsl(235, 21%, 11%);
   background-repeat: no-repeat;
 }
 .lightTheme{
   background-image: url(assets/bg-desktop-light.jpg);
+  background-size: 100% auto;
   background-color: hsl(0, 0%, 98%);
   background-repeat: no-repeat;
 }
@@ -17,8 +19,10 @@ ul{
 @media only screen and (max-width: 600px){
   .darkTheme{
     background-image: url(assets/bg-mobile-dark.jpg);
+    background-size: 100% auto;
   }
   .lightTheme{
     background-image: url(assets/bg-mobile-light.jpg);
+    background-size: 100% auto;
   }
 }
